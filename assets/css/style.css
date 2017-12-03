@@ -1,0 +1,20 @@
+
+h1{
+	font-size: 70pt;
+}
+
+.yellow{
+	color: #FED700;
+}
+
+#darkSideDiv, #lightSideDiv{
+	border: 2px grey solid;
+}
+
+body { 
+  background: url("https://images2.alphacoders.com/807/807567.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

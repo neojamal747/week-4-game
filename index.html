@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+ 	<!-- Meta tag for bootstrap scaling --><meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- jQuery --><script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+	<!-- Reset CSS --><link rel="stylesheet" type="text/css" href="Assets/css/reset.css">
+	<!-- Bootstrap CSS --><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- My CSS --><link rel="stylesheet" type="text/css" href="Assets/css/style.css">
+	<title>Star Wars RPG</title>
+</head>
+
+<body>
+	<!-- Main container -->
+	<div class="container-fluid">
+
+	<!-- Title -->
+		<div class ="text-center yellow" id="title">
+			<h1>Star</h1>
+			<h1>Wars</h1>
+			<h3>RPG</h3>
+		</div>
+		<!-- Available characters row -->
+		<br>
+		<div class="row" id="charactersRow">
+		</div>
+
+		<!-- Fight row -->
+		<div class="row" id="fightRow">
+			<!-- Border column -->
+			<div class="col-xs-1"></div>
+
+			<!-- Player character fight div -->
+			<div class="col-xs-10 col-md-4" id="lightSideDiv">
+				<h3 class="yellow">
+					Your Character
+				</h3>
+			</div>
+
+			<!-- Fight button & info box -->
+			<div class="col-xs-10 col-md-2">
+				<div id="fightButton"></div>
+				<br>
+				<div id="infoDiv"></div>
+			</div>
+
+			<!-- Enemy character fight div -->
+			<div class="col-xs-10 col-md-4" id="darkSideDiv">
+				<h3 class="yellow">
+					Your Opponent
+				</h3>
+			</div>
+
+			<!-- Border column -->
+			<div class="col-xs-1"></div>
+		</div>
+		<!-- /Fight row -->
+
+	</div>
+	<!-- /Main container -->
+	<!-- My JS --><script type="text/javascript" src="./Assets/javascript/game.js"></script>
+
+</body>
+</html>

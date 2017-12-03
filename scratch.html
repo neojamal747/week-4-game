@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<!-- Character div -->
+
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Character name</h3>
+        <p>Remaining Health</p>
+      </div>
+    </div>
+
+
+
+
+<div class="col-xs-4 col-md-1">
+    <div class="thumbnail">
+        <a href="#" class="">
+        	<h3>Character Name</h3>
+            <img src="http://lorempixel.com/400/300/technics/1/" alt="..." class="img-thumbnail">
+        	<p>Remaining Health</p>
+        </a>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+			function makeChar(div, char){
+		$(div).append(
+			"<div class='col-xs-4 col-md-2'>" +
+				"<div class='thumbnail' id='" + char.firstName + "'>" + 
+					"<a href='#'>" +
+						"<h3 class='text-center'>" + char.name + "</h3>" +
+						"<img src='" + char.source + "' alt='" + char.name + "' class='img-thumbnail'>" +
+						"<p class='text-center' id ='" + char + "health'>" + char.health + "</p>" +
+					"</a>" +
+	    		"</div>" +
+			"</div>"
+		)
+	};
+
+	function getId(element, attribute){
+		return $(element).attr(attribute);
+	};
+
+	function makeChar(div, char){
+		$(div).append(
+			"<div class='thumbnail' id='" + char.firstName + "'>" + 
+				"<a href='#'>" +
+					"<h3 class='text-center'>" + char.firstName + char.lastName + "</h3>" +
+					"<img src='" + char.source + "' alt='" + char.firstName + char.lastName + "' class='img-thumbnail'>" +
+					"<p class='text-center'>" + char.health + "</p>" +
+				"</a>" +
+    		"</div>"
+		)
+	}
+
+	Selects a random opponent and moves him/her to the main plaing area.
+	function villain(){
+		var charIndex = getRandomInt(charArray.length);
+		var vil = "#" + charArray[charIndex].firstName;
+		$(vil).appendTo("#enemyDiv");
+		//$(/*wrapping Div*/).remove();//Deletes the div holding the character's thumbnail.
+		combatArray.push(charArray.splice(charIndex, 1)[0]);
+		console.log("villainVar: " + villainVar);
+	};
+
+	//Moves the user-selected character, and an opponent (via the villain function), to the main playing area.
+	function hero(){
+		$(".thumbnail").on("click", function(){
+			$(this).appendTo("#playerDiv");
+			//$(/*wrapping Div*/).remove();//Deletes the div holding the character's thumbnail.
+			$("#fightButton").append("<button type='button' class='btn btn-danger btn-block'>Fight!</button>");
+			//combatArray = charArray.splice(, 1);
+			console.log("heroVar: " + heroVar);
+			villain();
+		})
+		return;
+	};
+
+	//Moves the selected character DIV to the appropriate part of the screen, and reorganized the underlying character objects.
+	function moveChar(){
+		$(".thumbnail").on("click", function(){
+			var parent = $(this).parent();
+			var selectedChar = $(this).attr("id");
+			//Idles the moveChar function if the user's character and opponent are already selected.
+			if (combatants < 2){
+				//Moves the enemy character to the appropriate DIV, and adds the corresponding object to combatObj;
+				if (combatants = 1){
+					$(this).appendTo("#darkSideDiv");
+					darkSide = charObj[selectedChar];
+				}
+				//Moves the user's character to the appropriate DIV, and adds the corresponding object to combatObj;
+				else if (combatants = 0){
+					$(this).appendTo("#lightSideDiv");
+					lightSide = charObj[selectedChar];
+				}
+				//In either scenario, this removes the character thumbail's enclosing div
+				$(parent).remove();
+			}	
+		});
+	}
+
+	var combatArray = [];
+	var heroVar = combatArray[0];
+	var villainVar = combatArray[1];
+	
+
+	Populates the charactersRow div with character divs.
+	var i = 0;
+	while(i < charArray.length){
+		makeChar("#charactersRow", charArray[i]);
+		i++;
+	}
+
+</script>
+
+<!-- /Character div -->
+
+
+</body>
+</html>
